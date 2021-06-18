@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use App\Traits\BelongsToTenant;
 use Laravel\Jetstream\Jetstream;
 use Laravel\Jetstream\TeamInvitation as JetstreamTeamInvitation;
 
 class TeamInvitation extends JetstreamTeamInvitation
 {
-    use BelongsToTenant;
-
     /**
      * The attributes that are mass assignable.
      *

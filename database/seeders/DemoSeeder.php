@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Team;
 use App\Models\Tenant;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -15,13 +16,11 @@ class DemoSeeder extends Seeder
      */
     public function run()
     {
-        $tenants = Tenant::factory()->count(3)->create();
+        $tenants = Team::factory()->count(3)->create();
 
         foreach ($tenants as $tenant)
         {
-            User::factory()->withPersonalTeam()->count(5)->create([
-                'tenant_id' => $tenant->id
-            ]);
+            User::factory()->withPersonalTeam()->count(5)->create();
         }
     }
 }

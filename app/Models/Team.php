@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Traits\BelongsToTenant;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
@@ -12,7 +11,6 @@ use Laravel\Jetstream\Team as JetstreamTeam;
 class Team extends JetstreamTeam
 {
     use HasFactory;
-    use BelongsToTenant;
 
     /**
      * The attributes that should be cast to native types.
@@ -31,7 +29,6 @@ class Team extends JetstreamTeam
     protected $fillable = [
         'name',
         'personal_team',
-        'tenant_id',
     ];
 
     /**

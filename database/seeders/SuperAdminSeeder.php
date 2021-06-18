@@ -17,7 +17,6 @@ class SuperAdminSeeder extends Seeder
         User::factory()->withPersonalTeam()->create([
             'name' => 'Super Admin',
             'email' => 'admin@admin.com',
-            'tenant_id' => null
         ]);
     }
 }

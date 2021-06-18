@@ -31,7 +31,6 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'tenant_id' => Tenant::factory()
         ];
     }
 
@@ -63,7 +62,7 @@ class UserFactory extends Factory
         return $this->has(
             Team::factory()
                 ->state(function (array $attributes, User $user) {
-                    return ['name' => $user->name.'\'s Team', 'user_id' => $user->id, 'personal_team' => true, 'tenant_id' => $user->tenant_id];
+                    return ['name' => $user->name.'\'s Team', 'user_id' => $user->id, 'personal_team' => true,];
                 }),
             'ownedTeams'
         );
