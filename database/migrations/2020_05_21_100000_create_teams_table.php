@@ -20,7 +20,7 @@ class CreateTeamsTable extends Migration
             $table->boolean('personal_team');
 
 
-            $table->foreignId('tenant_id')->nullable()->constrained('tenant')->onDelete('cascade');
+            $table->foreignId('tenant_id')->nullable()->constrained('tenants')->onDelete('cascade');
             $table->timestamps();
         });
     }

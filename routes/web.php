@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * Guest Routes
  */
-Route::get('/', [WelcomeController::class, 'welcome']);
+Route::get('/', [\App\Http\Controllers\GuestController::class, 'welcome']);
 
 
 /**

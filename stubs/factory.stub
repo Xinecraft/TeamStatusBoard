@@ -1,18 +1,19 @@
 <?php
 
-namespace Database\Factories;
+namespace {{ factoryNamespace }};
 
 use App\Models\Tenant;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use {{ namespacedModel }};
 
-class TenantFactory extends Factory
+class {{ factory }}Factory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Tenant::class;
+    protected $model = {{ model }}::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +23,8 @@ class TenantFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->unique()->company(),
+            //
+            'tenant_id' => Tenant::factory()
         ];
     }
 }

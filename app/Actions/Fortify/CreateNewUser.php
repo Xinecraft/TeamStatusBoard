@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\Team;
+use App\Models\Tenant;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -30,10 +31,15 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         return DB::transaction(function () use ($input) {
+            $tenant = Tenant::create([
+                'name' => $input['company']
+            ]);
+
             return tap(User::create([
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
+                'tenant_id' => $tenant->id
             ]), function (User $user) {
                 $this->createTeam($user);
             });
@@ -50,6 +56,7 @@ class CreateNewUser implements CreatesNewUsers
     {
         $user->ownedTeams()->save(Team::forceCreate([
             'user_id' => $user->id,
+            'tenant_id' => $user->tenant_id,
             'name' => explode(' ', $user->name, 2)[0]."'s Team",
             'personal_team' => true,
         ]));

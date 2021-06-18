@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('online_status')->default('offline');
             $table->string('timezone')->nullable();
 
-            $table->foreignId('tenant_id')->nullable()->constrained('tenant')->onDelete('cascade');
+            $table->foreignId('tenant_id')->nullable()->constrained('tenants')->onDelete('cascade');
             $table->timestamps();
         });
     }

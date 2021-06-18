@@ -7,9 +7,15 @@
         <jet-validation-errors class="mb-4" />
 
         <form @submit.prevent="submit">
+
             <div>
+                <jet-label for="company" value="Company Name" />
+                <jet-input id="company" type="text" class="mt-1 block w-full" v-model="form.company" required autofocus autocomplete="company" />
+            </div>
+
+            <div class="mt-4">
                 <jet-label for="name" value="Name" />
-                <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
+                <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autocomplete="name" />
             </div>
 
             <div class="mt-4">
@@ -75,6 +81,7 @@
         data() {
             return {
                 form: this.$inertia.form({
+                    company: '',
                     name: '',
                     email: '',
                     password: '',
