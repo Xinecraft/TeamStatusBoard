@@ -1,25 +1,33 @@
 <template>
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 items-center sm:pt-0">
         <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             <inertia-link v-if="$page.props.user" href="/dashboard" class="text-sm text-gray-700 underline">
                 Dashboard
             </inertia-link>
 
             <template v-else>
-                <inertia-link :href="route('login')" class="text-sm text-gray-700 underline">
-                    Log in
-                </inertia-link>
 
-                <inertia-link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline">
-                    Register
-                </inertia-link>
             </template>
         </div>
 
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 px-8">
             <h1 class="text-gray-700 font-extrabold text-4xl">
                 Team Status Board
             </h1>
+
+            <div class="flex justify-center mt-6">
+                <inertia-link :href="route('login')" class="font-bold text-sm border-2 border-purple-600 rounded-lg px-3 py-2 text-purple-600 cursor-pointer hover:bg-purple-600 hover:text-purple-200">
+                    Login
+                </inertia-link>
+
+                <inertia-link v-if="canRegister" :href="route('register')" class="ml-4 font-bold focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-purple-500 hover:bg-purple-600 hover:shadow-lg">
+                    Register
+                </inertia-link>
+            </div>
+
+            <div class="flex justify-center">
+                <a target="_blank" class="mt-6 text-purple-500 text-sm underline hover:text-purple-700" href="https://github.com/Xinecraft/TeamStatusBoard">OpenSource at Github</a>
+            </div>
         </div>
     </div>
 </template>
