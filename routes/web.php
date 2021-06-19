@@ -23,4 +23,7 @@ Route::get('/', [\App\Http\Controllers\GuestController::class, 'welcome']);
 /**
  * Authenticated Routes
  */
-Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard');
+Route::get('dashboard', [DashboardController::class, 'show'])->name('dashboard');
+
+Route::post('status/ping', [\App\Http\Controllers\StatusController::class, 'ping'])->name('status.ping');
+Route::post('status/update', [\App\Http\Controllers\StatusController::class, 'update'])->name('status.update');

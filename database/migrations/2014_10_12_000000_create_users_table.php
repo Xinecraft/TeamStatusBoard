@@ -23,9 +23,13 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
 
-            $table->string('online_status')->default('offline');
+            $table->boolean('is_automatic_status')->default(true);
+            $table->timestamp('last_seen_at')->nullable();
+            $table->string('status')->default('offline');
+            $table->string('work_status')->nullable();
             $table->string('timezone')->nullable();
 
+            $table->string('role')->nullable();
             $table->timestamps();
         });
     }

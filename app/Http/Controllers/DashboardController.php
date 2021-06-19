@@ -12,8 +12,12 @@ class DashboardController extends Controller
         $this->middleware([ 'auth:sanctum', 'verified' ]);
     }
 
-    public function show()
+    public function show(Request $request)
     {
-        return Inertia::render('Dashboard');
+        $currentTeamUsers = $request->user()->currentTeam->allUsers()->sortByDesc('last_seen_at')->values()->toArray();
+
+        return Inertia::render('Dashboard', [
+            'users' => $currentTeamUsers
+        ]);
     }
 }

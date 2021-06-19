@@ -48,6 +48,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_automatic_status' => 'boolean'
     ];
 
     /**
@@ -58,4 +59,22 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    protected function defaultProfilePhotoUrl()
+    {
+        return 'https://avatars.dicebear.com/api/bottts/' . urlencode($this->name) . '.svg';
+    }
+
+    public function getStatusAttribute($status)
+    {
+        if (!$this->is_automatic_status) {
+            return $status;
+        }
+
+        if($this->last_seen_at > now()->subMinutes(2)) {
+            return 'online';
+        }
+
+        return 'offline';
+    }
 }

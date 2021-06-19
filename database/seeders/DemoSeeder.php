@@ -16,11 +16,17 @@ class DemoSeeder extends Seeder
      */
     public function run()
     {
-        $tenants = Team::factory()->count(3)->create();
+        User::factory()->withPersonalTeam()->count(10)->create();
 
-        foreach ($tenants as $tenant)
-        {
-            User::factory()->withPersonalTeam()->count(5)->create();
+        $team = Team::factory()->create([
+            'personal_team' => false
+        ]);
+
+        $users = User::all();
+        foreach ($users as $user) {
+            $team->users()->attach(
+                $user, ['role' => 'member']
+            );
         }
     }
 }

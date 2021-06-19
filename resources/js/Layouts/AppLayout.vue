@@ -226,6 +226,8 @@
                 <slot></slot>
             </main>
         </div>
+
+        <ping />
     </div>
 </template>
 
@@ -236,9 +238,11 @@
     import JetDropdownLink from '@/Jetstream/DropdownLink'
     import JetNavLink from '@/Jetstream/NavLink'
     import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
+    import Ping from "@/Components/Ping";
 
     export default {
         components: {
+            Ping,
             JetApplicationMark,
             JetBanner,
             JetDropdown,

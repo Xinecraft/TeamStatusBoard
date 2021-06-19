@@ -8,22 +8,29 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <!-- <welcome /> -->
-                </div>
+                <status-change-box />
+                <user-status-list :users="users"/>
             </div>
         </div>
     </app-layout>
 </template>
 
 <script>
-    import AppLayout from '@/Layouts/AppLayout'
-    import Welcome from '@/Jetstream/Welcome'
+import AppLayout from '@/Layouts/AppLayout'
+import UserStatusList from "@/Components/UserStatusList";
+import StatusChangeBox from "@/Components/StatusChangeBox";
 
-    export default {
-        components: {
-            AppLayout,
-            Welcome,
-        },
-    }
+export default {
+    components: {
+        StatusChangeBox,
+        UserStatusList,
+        AppLayout,
+    },
+
+    props: {
+        users: Array
+    },
+
+
+}
 </script>
