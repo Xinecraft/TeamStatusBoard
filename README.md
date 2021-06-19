@@ -8,7 +8,7 @@
 
 I don't know why this exists, Maybe coz I was bored.
 
-## Feature
+## Features
 - Live Status with Polling.
 - Auto Mode - Keep you online till you are on website.
 - Manual Mode - Hide yourself if you want to.
