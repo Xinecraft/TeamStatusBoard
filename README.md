@@ -31,6 +31,7 @@ Just like basic laravel install procedure.
 - cp .env.example .env
 - php artisan key:generate
 - npm run db:migrate
+- php artisan storage:link
 - done!
 
 Note: make sure to set SMTP details in .env for invite emails to work.
