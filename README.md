@@ -1,5 +1,5 @@
 <h1 align="center">Team Status Board</h1>
-<p align="center">No bullshit team status board!</p>
+<p align="center">No bullshit live team status board!</p>
 
 ![J2RX7xqs18](https://user-images.githubusercontent.com/3089863/122630657-05e55000-d0e3-11eb-9cf6-24d37cb4dfa9.gif)
 
