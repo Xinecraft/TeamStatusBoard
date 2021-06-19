@@ -1,8 +1,8 @@
 <h1 align="center">Team Status Board</h1>
 <p align="center">No bullshit team status board!</p>
 
+![J2RX7xqs18](https://user-images.githubusercontent.com/3089863/122630657-05e55000-d0e3-11eb-9cf6-24d37cb4dfa9.gif)
 
-<img src="https://i.imgur.com/dcqw50d.png">
 
 ## About
 
@@ -28,8 +28,11 @@ Just like basic laravel install procedure.
 - cd TeamStatusBoard
 - composer install
 - npm install && npm run prod
+- cp .env.example .env
+- php artisan key:generate
 - npm run db:migrate
 - done!
+Note: make sure to set SMTP details in .env for invite emails to work.
 
 
 ## Contributing
