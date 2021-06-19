@@ -226,6 +226,20 @@
             <main>
                 <slot></slot>
             </main>
+
+            <footer class="flex flex-col p-5 items-center justify-center">
+                <div class="text-sm text-gray-800">
+                    &copy; TeamStatusBoard {{ new Date().getFullYear() }}
+                </div>
+                <div class="text-xs text-gray-500">
+                    Created with
+                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="text-red-500 w-4 h-4 animate-ping absolute inline-flex opacity-75"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg> <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="text-red-500 w-4 h-4 relative inline-flex"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                    by Xinecraft
+                </div>
+                <a target="_blank" href="https://github.com/Xinecraft/TeamStatusBoard" class="text-xs text-gray-700 hover:underline">
+                    Visit Github
+                </a>
+            </footer>
         </div>
 
         <ping />
