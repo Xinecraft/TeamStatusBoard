@@ -62,7 +62,7 @@ class User extends Authenticatable
 
     protected function defaultProfilePhotoUrl()
     {
-        return 'https://avatars.dicebear.com/api/bottts/' . urlencode($this->name) . '.svg';
+        return 'https://avatars.dicebear.com/api/bottts/' . urlencode($this->email) . '.svg';
     }
 
     public function getStatusAttribute($status)

@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-4 gap-2">
+    <div class="grid grid-cols-1 gap-2 m-4 md:grid-cols-2 lg:grid-cols-4">
         <div v-for="user in users" :key="user.id" class="bg-white shadow rounded p-4 flex-col flex items-center">
             <div id="statusBox" class="flex w-full justify-end">
                 <div id="online" class="flex space-x-1" v-if="user.status === 'online'">

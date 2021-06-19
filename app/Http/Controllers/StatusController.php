@@ -37,6 +37,7 @@ class StatusController extends Controller
         if ($request->autoStatus) {
             $status = 'online';
         }
+        $request->user()->last_seen_at = now();
         $request->user()->status = $status;
         $request->user()->work_status = $request->workStatus;
         $request->user()->is_automatic_status = $request->autoStatus;
